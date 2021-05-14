@@ -14,7 +14,7 @@ PORT = int(os.getenv('PORT', 8080))
 async def init_app(*args):
     app = web.Application()
     aiohttp_jinja2.setup(
-        app, loader=jinja2.FileSystemLoader('aiotermux/templates')
+        app, loader=jinja2.FileSystemLoader('vuegram/templates')
     )
     return app
 
