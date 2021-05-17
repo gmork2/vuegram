@@ -15,11 +15,19 @@ PORT = int(os.getenv('PORT', 8080))
 
 async def init_app(*args):
     app = web.Application()
+    app['websockets'] = {}
+    app.on_shutdown.append(shutdown)
     aiohttp_jinja2.setup(
         app, loader=jinja2.FileSystemLoader('vuegram/templates')
     )
     setup_routes(app)
     return app
+
+
+async def shutdown(app):
+    for ws in app['websockets'].values():
+        await ws.close()
+    app['websockets'].clear()
 
 
 def main(*args):
