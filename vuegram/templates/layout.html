@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+{% block meta %}
+    {{ super() }}
+    <script src="/static/js/vue.global.js"></script>
+    <script src="/static/js/vuex.global.js"></script>
+{% endblock %}
+
 {% block scripts %}
     <script type="module" src="/static/js/main.js"></script>
 {% endblock %}
