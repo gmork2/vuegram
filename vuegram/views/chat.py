@@ -12,3 +12,8 @@ def get_anonymous_user():
         'id': user_id,
         'name': 'Anonymous' + str(user_id)
     }
+
+
+class WebSocketHandler(web.View):
+    ws = None
+    message_id = 1
