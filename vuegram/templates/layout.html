@@ -6,6 +6,28 @@
     <script src="/static/js/vuex.global.js"></script>
 {% endblock %}
 
+{% block header %}{% endblock %}
+
+{% block content %}
+    <!-- Start Chat Area -->
+    {#    <div class="container mt-md-3 pt-3 flex-grow-1">#}
+    <div class="flex-grow-1">
+        <div class="row h-100">
+            {#
+            <div class="col-lg-4 col-md-4 col-sm-4 d-none d-md-block p-0"
+                 style="border-right: 1px solid #ebe9f1;">
+                {% block sidebar %}{% endblock %}
+            </div>
+            #}
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0">
+                {% block container %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    <!-- End Chat Area -->
+{% endblock %}
+
 {% block scripts %}
     <script type="module" src="/static/js/main.js"></script>
 {% endblock %}
