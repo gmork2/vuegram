@@ -18,3 +18,14 @@ def create_error_middleware(overrides):
     @web.middleware
     async def error_middleware(request, handler):
         pass
+
+    return error_middleware
+
+
+# Set a middleware list in settings
+def setup_middlewares(app):
+    error_middleware = create_error_middleware({
+        404: handle_404,
+        500: handle_500
+    })
+    app.middlewares.append(error_middleware)
