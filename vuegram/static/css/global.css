@@ -1,0 +1,17 @@
+html, body {
+    font-family: 'montserrat-light', sans-serif;
+    font-weight: 300;
+    color: #6e6b7b;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+}
+
+@font-face {
+    font-family: 'montserrat-light';
+    url('../fonts/montserrat/Montserrat-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
