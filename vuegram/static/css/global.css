@@ -1,3 +1,7 @@
+/*----------------------------------------*/
+/*  Theme default CSS
+/*----------------------------------------*/
+
 html, body {
     font-family: 'montserrat-light', sans-serif;
     font-weight: 300;
@@ -9,9 +13,63 @@ html, body {
     background-color: #f8f8f8;
 }
 
+html[dir] body {
+    background-color: #f8f8f8;
+}
+
+html[dir="ltr"] body {
+    direction: ltr;
+}
+
+body > * {
+    flex-shrink: 0;
+}
+
+body {
+    /*background: #00c292;*/
+}
+
+i[class^="ri-"] {
+    font-size: 22px;
+    opacity: 80%;
+    color: #7269ef;
+}
+
+p {
+    margin: 0 0 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 5px 0 0px;
+    /*color: #fff;*/
+    font-weight: 700;
+}
+
+a {
+    color: #6e6b7b;
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+}
+
+a:hover {
+    /*color: #00c292;*/
+    text-decoration: none;
+}
+
+a:active, a:hover, a:focus {
+    outline: 0 none;
+    text-decoration: none;
+}
+
+ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0
+}
+
 @font-face {
     font-family: 'montserrat-light';
-    url('../fonts/montserrat/Montserrat-Light.ttf') format('truetype');
+url('../fonts/montserrat/Montserrat-Light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
