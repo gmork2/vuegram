@@ -25,3 +25,9 @@ class BaseMessage {
         return `${user.id + Date.now()}`
     }
 }
+
+class Message extends BaseMessage{
+
+}
+
+export default Message
