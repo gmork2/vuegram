@@ -5,13 +5,14 @@ export default {
 
     state() {
         return {
-            messages: [],
-            index: 0,
-            counter: 0
+            ws: null,
         }
     },
 
-    getters: {},
+    getters: {
+        // ../../utils/socket/status.js
+        status: (state) => state.ws ? 'connected' : 'disconnected',
+    },
 
     mutations: {}
 }
