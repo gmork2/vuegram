@@ -4,3 +4,9 @@
     {{ super() }}
     <link rel="stylesheet" href="/static/css/components/chat/vg-conversation-form.css">
 {% endblock %}
+
+{% block container %}
+    {% raw %}
+        <vg-conversation-list></vg-conversation-list>
+    {% endraw %}
+{% endblock %}
