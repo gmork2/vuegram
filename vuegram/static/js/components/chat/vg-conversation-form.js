@@ -19,7 +19,7 @@ export default {
                     <i class="ri-attachment-line"></i>
                 </button>
                 <button
-                    id="vg-send"
+                    id="vg-send-button"
                     @click="sendMessage($event)"
                     :disabled='isDisabled'
                     type="submit"
