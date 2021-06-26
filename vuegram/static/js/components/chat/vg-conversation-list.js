@@ -1,9 +1,16 @@
+import vgMessage from "./vg-message.js"
+import vgLikeButton from "./buttons/vg-like-button.js"
+import vgScrollButton from "./buttons/vg-scroll-button.js"
+import vgConversationForm from "./vg-conversation-form.js"
+
 export default {
     template: `
 
     `,
 
     name: 'vg-conversation-list',
+
+    components: {vgMessage, vgLikeButton, vgScrollButton, vgConversationForm},
 
     data() {
         return {
