@@ -4,7 +4,7 @@ export default {
             <div class="d-flex">
                 <label for="text"></label>
                 <input 
-                    id="vg-message-text"
+                    id="vg-message-input"
                     type="text"
                     list="suggestions"
                     class="form-control custom-input"
