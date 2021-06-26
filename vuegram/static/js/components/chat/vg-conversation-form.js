@@ -14,7 +14,7 @@ export default {
                     placeholder="Enter your message">
                 <datalist id="vg-message-text-suggestions"></datalist>
                 <button
-                    id="vg-attachment"
+                    id="vg-attachment-button"
                     class="btn btn-md btn-primary custom-btn py-1 px-2 mr-1">
                     <i class="ri-attachment-line"></i>
                 </button>
