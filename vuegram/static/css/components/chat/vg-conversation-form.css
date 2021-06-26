@@ -24,3 +24,8 @@
     border-bottom: 1px solid #ebe9f1;
     border-right: 1px solid #ebe9f1;
 }
+
+#vg-send i {
+    color: #fff !important;
+    background-color: #7269ef;
+}
