@@ -3,3 +3,14 @@
     border: 1px solid #ebe9f1;
     padding: .5rem 1rem;
 }
+
+#vg-message-text {
+    border-radius: .3rem 0 0 .3rem;
+    border-top: 1px solid #ebe9f1;
+    border-bottom: 1px solid #ebe9f1;
+    border-left: 1px solid #ebe9f1;
+}
+
+#vg-message-text::placeholder {
+    color: #ccc;
+}
