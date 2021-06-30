@@ -1,0 +1,108 @@
+.vg-message {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.vg-message:first-child {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .vg-message:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.vg-message.odd {
+    justify-content: flex-start;
+}
+
+.vg-message a {
+    order: 1;
+    margin: .3rem;
+}
+
+.vg-message.odd a {
+    order: 2;
+}
+
+.vg-message .vg-message-balloon {
+    order: 2;
+    color: #fff;
+    max-width: 70%;
+}
+
+.vg-message.odd .vg-message-balloon {
+    order: 1;
+    color: #6e6b7b;
+}
+
+.vg-message .vg-message-balloon .text-wrap {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    margin-left: .3rem;
+    display: inline-block;
+    position: relative;
+    border-radius: .7em .7em 0 .7em;
+    background-image: linear-gradient(80deg,#7367f0,#9e95f5);
+    box-shadow: 0 4px 8px 0 rgba(34,41,47,.12);
+}
+
+.vg-message.odd .vg-message-balloon .text-wrap {
+    background: none;
+    background-color: #fff;
+    min-width: 50%;
+    width: 100%;
+    border-radius: .7em .7em .7em 0;
+    margin-left: 0;
+    margin-right: .3rem;
+    box-shadow: 0 4px 8px 0 rgba(34,41,47,.12);
+}
+
+.vg-message.odd .vg-message-balloon .text-wrap:after {
+    border-color: rgba(238, 238, 242, 0);
+    left: 100%;
+    top: 20%;
+}
+
+.vg-message .vg-message-balloon .text-wrap i {
+    display: block;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    position: relative;
+}
+
+.vg-message .vg-message-balloon .text-wrap p {
+    margin: 0;
+    padding-top: 3px;
+    font-size: 14px;
+    line-height: 15px;
+}
+
+.vg-message .vg-message-balloon .text-wrap em {
+    margin: 0;
+    font-size: 12px;
+    line-height: 12px;
+    padding-top: 7px;
+    padding-left: 14px;
+    font-weight: 400;
+    float: right;
+}
+
+.vg-message .vg-message-balloon .text-wrap em i {
+    margin-left: .25rem;
+    color: #fff;
+}
+
+.vg-message.odd .vg-message-balloon .text-wrap em i {
+    color: #28c76f;
+}
+
+.vg-message a i {
+    font-size: 24px;
+}
+
+.vg-message a i.vg-like-icon{
+    color: #ea5455 !important;
+}
