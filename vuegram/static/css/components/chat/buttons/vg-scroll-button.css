@@ -1,7 +1,13 @@
 .vg-circle {
-
+    position: absolute;
+    bottom: 5.07rem;
+    right: 1.52rem;
 }
 
 .vg-circle i {
-
+    font-size: 45px;
+    border-radius: 2rem;
+    opacity: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 24px 0 rgba(34,41,47,.1);
 }
