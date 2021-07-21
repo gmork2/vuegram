@@ -19,7 +19,11 @@ export default {
     },
 
     computed: {
-
+        messages() {
+            return this.$store.state.messages.messages
+        },
+        ...Vuex.mapGetters({status: 'status'}),
+        // ...Vuex.mapState({messages: 'messages/messages'}),
     },
 
     methods: {
