@@ -5,7 +5,31 @@ import vgConversationForm from "./vg-conversation-form.js"
 
 export default {
     template: `
-
+        <div id="vg-chat-box" class="d-flex flex-column h-100">
+            <div
+                id="vg-conversation"
+                class="flex-grow-1"
+                ref="chatList"
+                v-on:scroll.passive='handleScroll'>
+                <div class="chat-conversation p-1">
+                    <ul id="conversation-list" class="conversation-list">
+                        <vg-message
+                            v-for="msg in messages"
+                            :key="msg.id"
+                            :msg="msg"
+                            :isScrolling="isScrolling">
+                        </vg-message>
+                    </ul>
+                </div>
+            </div>
+            
+            <vg-scroll-button
+                @do-action="doAction"
+                v-show="!autoScroll">
+            </vg-scroll-button>
+            
+            <vg-conversation-form></vg-conversation-form>
+        </div>
     `,
 
     name: 'vg-conversation-list',
@@ -15,6 +39,8 @@ export default {
     data() {
         return {
             uri: null,
+            isScrolling: null,
+            autoScroll: true,
         }
     },
 
@@ -27,7 +53,7 @@ export default {
     },
 
     methods: {
-
+        doAction(action) {},
     },
 
     created() {
