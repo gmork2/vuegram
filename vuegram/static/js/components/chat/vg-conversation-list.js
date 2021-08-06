@@ -39,6 +39,8 @@ export default {
     data() {
         return {
             uri: null,
+            scrollHeight: 0,
+            scrollTop: 0,
             isScrolling: null,
             autoScroll: true,
         }
@@ -53,6 +55,11 @@ export default {
     },
 
     methods: {
+        IsScrollAtBottom(container) {
+            const height = container.offsetHeight + container.scrollTop
+            return height >= this.scrollHeight
+        },
+
         doAction(action) {},
     },
 
