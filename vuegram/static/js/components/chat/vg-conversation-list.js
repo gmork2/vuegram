@@ -55,6 +55,18 @@ export default {
     },
 
     methods: {
+        addMessage() {
+            const container = this.$refs.chatList
+
+            this.$nextTick(function () {
+                if (this.IsScrollAtBottom(container))
+                    this.autoScroll = true
+                if (this.autoScroll)
+                    container.scrollTo(0, container.scrollHeight)
+                this.scrollHeight = container.scrollHeight
+            })
+        },
+
         IsScrollAtBottom(container) {
             const height = container.offsetHeight + container.scrollTop
             return height >= this.scrollHeight
