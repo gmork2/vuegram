@@ -67,6 +67,11 @@ export default {
             })
         },
 
+        scrollToBottom() {
+            const container = this.$refs.chatList
+            container.scrollTo(0, container.scrollHeight)
+        },
+
         IsScrollAtBottom(container) {
             const height = container.offsetHeight + container.scrollTop
             return height >= this.scrollHeight
