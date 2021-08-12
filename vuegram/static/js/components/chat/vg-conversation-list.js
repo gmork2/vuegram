@@ -89,4 +89,8 @@ export default {
         this.uri = schema + window.location.host + '/'
         this.$store.commit('socket/SET_CONNECTION', this.uri)
     },
+
+    beforeDestroy() {
+        this.unsubscribe()
+    },
 }
