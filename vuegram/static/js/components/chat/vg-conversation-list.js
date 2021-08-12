@@ -81,6 +81,10 @@ export default {
     },
 
     created() {
+        this.unsubscribe = this.$store.subscribe((mutation, state) => {
+            if (mutation.type === 'messages/ADD_MESSAGE')
+                this.addMessage()
+        })
         const schema = window.location.protocol === 'https:' && 'wss://' || 'ws://'
         this.uri = schema + window.location.host + '/'
         this.$store.commit('socket/SET_CONNECTION', this.uri)
