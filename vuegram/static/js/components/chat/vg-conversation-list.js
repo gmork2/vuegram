@@ -77,7 +77,19 @@ export default {
             return height >= this.scrollHeight
         },
 
-        doAction(action) {},
+        doAction(action) {
+            switch (action) {
+                case 'connect':
+                    this.$store.commit('socket/SET_CONNECTION', this.uri)
+                    break
+                case 'clear':
+                    this.$store.commit('messages/CLEAR_MESSAGES')
+                    break
+                case 'scroll-bottom':
+                    this.scrollToBottom()
+                    break
+            }
+        },
     },
 
     created() {
