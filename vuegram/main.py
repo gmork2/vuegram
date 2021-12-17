@@ -18,7 +18,7 @@ async def init_app(*args):
     app['websockets'] = {}
     app.on_shutdown.append(shutdown)
     aiohttp_jinja2.setup(
-        app, loader=jinja2.FileSystemLoader('vuegram/templates')
+        app, loader=jinja2.FileSystemLoader('templates')
     )
     setup_routes(app)
     return app
