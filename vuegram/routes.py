@@ -1,5 +1,9 @@
 import pathlib
+
 import aiohttp_cors
+
+from views.chat import WebSocketHandler
+
 
 PROJECT_ROOT = pathlib.Path(__file__).parent
 
@@ -15,7 +19,7 @@ def setup_routes(app):
             )
         }
     )
-
+    app.router.add_route('*', '/', WebSocketHandler, name='websocket_handler')
     app.router.add_static(
         '/static/',
         path=PROJECT_ROOT / 'static',
