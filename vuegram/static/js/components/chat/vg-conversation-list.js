@@ -7,7 +7,7 @@ export default {
     template: `
         <div id="vg-chat-box" class="d-flex flex-column h-100">
             <div
-                id="vg-conversation"
+                id="vg-conversation-list"
                 class="flex-grow-1"
                 ref="chatList"
                 v-on:scroll.passive='handleScroll'>
