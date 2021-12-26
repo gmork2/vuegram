@@ -73,3 +73,45 @@ ul {
     font-weight: normal;
     font-style: normal;
 }
+
+/*----------------------------------------*/
+/*  Overwriting CSS
+/*----------------------------------------*/
+
+.form-control:focus {
+    border-color: #ebe9f1;
+}
+
+.custom-input {
+    border: 1px solid #ebe9f1;
+    border-radius: .3rem;
+    color: #6e6b7b;
+}
+
+.custom-input:focus {
+    box-shadow: none;
+    color: #6e6b7b;
+}
+
+.custom-input:disabled {}
+
+.custom-btn {
+    font-size: 14px;
+    background-color: #7269ef;
+    border-color: #7269ef;
+}
+
+.btn.custom-btn {
+    border-radius: .6rem;
+    background-color: #7269ef;
+    border: 1px solid #ebe9f1;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn.custom-btn:hover, .btn.custom-btn:focus, .btn.custom-btn:active {
+    background-color: #7269ef;
+    border: 1px solid #ebe9f1;
+    outline: none;
+    box-shadow: none;
+}
