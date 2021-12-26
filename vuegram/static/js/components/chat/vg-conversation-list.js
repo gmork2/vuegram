@@ -43,6 +43,7 @@ export default {
             scrollTop: 0,
             isScrolling: null,
             autoScroll: true,
+            timeout: null
         }
     },
 
@@ -75,6 +76,27 @@ export default {
         IsScrollAtBottom(container) {
             const height = container.offsetHeight + container.scrollTop
             return height >= this.scrollHeight
+        },
+
+        handleScroll() {
+            const container = this.$refs.chatList
+
+            this.$nextTick(function () {
+                if (container.scrollTop < this.scrollTop) {
+                    this.autoScroll = false
+                }
+                this.scrollTop = container.scrollTop
+
+                this.isScrolling = true
+                clearTimeout(this.timeout);
+                this.timeout = setTimeout(() => {
+                    this.isScrolling = false
+                }, 1000)
+
+                if (this.IsScrollAtBottom(container)) {
+                    this.autoScroll = true
+                }
+            })
         },
 
         doAction(action) {
