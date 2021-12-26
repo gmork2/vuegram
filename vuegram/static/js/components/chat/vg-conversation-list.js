@@ -3,6 +3,8 @@ import vgLikeButton from "./buttons/vg-like-button.js"
 import vgScrollButton from "./buttons/vg-scroll-button.js"
 import vgConversationForm from "./vg-conversation-form.js"
 
+const STORAGE_SIZE = 10
+
 export default {
     template: `
         <div id="vg-chat-box" class="d-flex flex-column h-100">
@@ -126,5 +128,14 @@ export default {
 
     beforeDestroy() {
         this.unsubscribe()
+    },
+
+    mounted() {
+        setInterval(
+            () => {
+                this.$store.commit('messages/UPDATE_MESSAGES')
+                this.$store.commit('messages/SAVE_MESSAGES', STORAGE_SIZE)
+            }, 5000
+        )
     },
 }
