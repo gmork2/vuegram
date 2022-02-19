@@ -14,11 +14,12 @@ PORT = int(os.getenv('PORT', 8080))
 
 
 async def init_app(*args):
+    template_dir = os.path.join(os.path.dirname(__file__), 'templates')
     app = web.Application()
     app['websockets'] = {}
     app.on_shutdown.append(shutdown)
     aiohttp_jinja2.setup(
-        app, loader=jinja2.FileSystemLoader('templates')
+        app, loader=jinja2.FileSystemLoader(template_dir)
     )
     setup_routes(app)
     return app
