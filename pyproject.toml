@@ -1,0 +1,17 @@
+[project]
+name = "vuegram"
+version = "0.2.0"
+description = "Simple websocket chat made with vuejs and aiohttp."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "aiohttp",
+    "aiohttp-cors",
+    "aiohttp-jinja2",
+    "aiohttp-sse",
+    "jinja2",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
