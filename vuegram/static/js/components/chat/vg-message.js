@@ -1,5 +1,3 @@
-import Message from "../../models/message.js"
-
 export default {
     template: `
         <li
@@ -77,10 +75,11 @@ export default {
 
     computed: {
         classes() {
-            let odd = false
-            try {
-                odd = this.$store.state.auth.user.id.toString() !== this.msg.user.id.toString()
-            } catch (e) {}
+            const authUserId = this.$store.state.auth.user?.id
+            const messageUserId = this.msg.user?.id
+            const odd = authUserId != null && messageUserId != null
+                ? authUserId.toString() !== messageUserId.toString()
+                : false
             return {
                 clearfix: true,
                 animate__animated: true,
