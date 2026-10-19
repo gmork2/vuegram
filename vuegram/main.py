@@ -1,6 +1,5 @@
 import logging
 import sys
-import asyncio
 import os
 
 import aiohttp_jinja2
@@ -33,9 +32,7 @@ async def shutdown(app):
 
 def main(*args):
     logging.basicConfig(level=logging.DEBUG)
-    loop = asyncio.get_event_loop()
-
-    app = init_app(loop)
+    app = init_app()
     web.run_app(app, host=HOST, port=PORT)
 
 
