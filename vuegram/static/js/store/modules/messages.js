@@ -12,7 +12,7 @@ export default {
     },
 
     getters: {
-        unread: (state) => state.filter((message) => !message.read),
+        unread: (state) => state.messages.filter((message) => !message.read),
 
         unreadFrom: (state, getters) => getters.unread
             .map((message) => message.user.name)
