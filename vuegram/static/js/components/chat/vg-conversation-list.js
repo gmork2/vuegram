@@ -45,7 +45,8 @@ export default {
             scrollTop: 0,
             isScrolling: null,
             autoScroll: true,
-            timeout: null
+            timeout: null,
+            messageUpdateInterval: null
         }
     },
 
@@ -128,10 +129,14 @@ export default {
 
     beforeDestroy() {
         this.unsubscribe()
+        if (this.messageUpdateInterval) {
+            clearInterval(this.messageUpdateInterval)
+            this.messageUpdateInterval = null
+        }
     },
 
     mounted() {
-        setInterval(
+        this.messageUpdateInterval = setInterval(
             () => {
                 this.$store.commit('messages/UPDATE_MESSAGES')
                 this.$store.commit('messages/SAVE_MESSAGES', STORAGE_SIZE)
