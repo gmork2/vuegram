@@ -28,6 +28,8 @@ class WebSocketHandler(web.View):
         ws_ready = self.ws.can_prepare(request)
         if not ws_ready.ok:
             return aiohttp_jinja2.render_template('index.html', request, {})
+        if not self._is_allowed_origin(request):
+            raise web.HTTPForbidden(reason='Origin not allowed')
 
         await self.ws.prepare(request)
         user = get_anonymous_user()
@@ -38,6 +40,18 @@ class WebSocketHandler(web.View):
         await self.disconnect(request, user)
 
         return self.ws
+
+    @staticmethod
+    def _is_allowed_origin(request):
+        origin = request.headers.get('Origin')
+        if not origin:
+            return False
+        same_host_origins = {
+            f'http://{request.host}',
+            f'https://{request.host}',
+        }
+        configured_origins = request.app.get('allowed_origins', set())
+        return origin in same_host_origins or origin in configured_origins
 
     async def connect(self, user):
         await self.ws.send_json({

@@ -12,10 +12,16 @@ HOST = os.getenv('HOST', '0.0.0.0')
 PORT = int(os.getenv('PORT', 8080))
 
 
+def get_allowed_origins():
+    origins = os.getenv('ALLOWED_ORIGINS', '')
+    return {origin.strip() for origin in origins.split(',') if origin.strip()}
+
+
 async def init_app(*args):
     template_dir = os.path.join(os.path.dirname(__file__), 'templates')
     app = web.Application()
     app['websockets'] = {}
+    app['allowed_origins'] = get_allowed_origins()
     app.on_shutdown.append(shutdown)
     aiohttp_jinja2.setup(
         app, loader=jinja2.FileSystemLoader(template_dir)

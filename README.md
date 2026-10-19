@@ -31,6 +31,11 @@ uv run python main.py
 ```
 Invite multiple users to access your server's IP address (port 8080) through a browser, each will be assigned a random username.
 
+If you need to allow cross-origin WebSocket clients, configure trusted origins explicitly:
+```bash
+ALLOWED_ORIGINS="https://chat.example.com,https://admin.example.com" uv run python main.py
+```
+
 ## Development
 CI runs on GitHub Actions (`.github/workflows/ci.yml`) and validates the project with Python 3.14 and uv on pull requests and pushes to `main`.
 
