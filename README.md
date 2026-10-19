@@ -36,6 +36,20 @@ If you need to allow cross-origin WebSocket clients, configure trusted origins e
 ALLOWED_ORIGINS="https://chat.example.com,https://admin.example.com" uv run python main.py
 ```
 
+## Docker deployment
+Build and run with Docker:
+```bash
+docker build -t vuegram:latest .
+docker run --rm -p 8080:8080 \
+  -e ALLOWED_ORIGINS="https://chat.example.com" \
+  vuegram:latest
+```
+
+Or run with Docker Compose:
+```bash
+docker compose up --build -d
+```
+
 ## Development
 CI runs on GitHub Actions (`.github/workflows/ci.yml`) and validates the project with Python 3.14 and uv on pull requests and pushes to `main`.
 
