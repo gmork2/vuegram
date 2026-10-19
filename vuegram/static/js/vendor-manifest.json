@@ -1,0 +1,14 @@
+{
+  "vue.global.js": {
+    "package": "vue",
+    "sha256": "32e8d2cf5034e241ccd220b42bb07042b0604839bd04607106728c338c92738b",
+    "source_url": "https://unpkg.com/vue@3.5.44/dist/vue.global.js",
+    "version": "3.5.44"
+  },
+  "vuex.global.js": {
+    "package": "vuex",
+    "sha256": "a643dcac86efa61d168a3675e91db616f40c76a558da5661b9b4f5643ff864e5",
+    "source_url": "https://unpkg.com/vuex@4.1.0/dist/vuex.global.js",
+    "version": "4.1.0"
+  }
+}
