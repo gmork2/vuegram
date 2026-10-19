@@ -2,7 +2,7 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-Simple websocket chat made with vuejs and aiohttp.
+Simple WebSocket chat built with Vue.js and aiohttp.
 
 
 
@@ -11,23 +11,28 @@ Simple websocket chat made with vuejs and aiohttp.
 ## Getting Started
 
 ### Installation
-Create a virtual environment and install the dependencies:
+This project uses **uv** for dependency and environment management and targets **Python 3.14+**.
+
+Install uv (once):
 ```bash
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Sync the project environment from the lock file:
+```bash
+uv sync --frozen
 ```
 
 ### Usage
 Run the aiohttp web server:
 ```bash
 cd vuegram
-python main.py
+uv run python main.py
 ```
 Invite multiple users to access your server's IP address (port 8080) through a browser, each will be assigned a random username.
 
-## Authors
-**Fernando M** - https://bitbucket.org/gmork2/
+## Development
+CI runs on GitHub Actions (`.github/workflows/ci.yml`) and validates the project with Python 3.14 and uv on pull requests and pushes to `main`.
 
 ## License
 This project is licensed under the GNU GENERAL PUBLIC LICENSE
