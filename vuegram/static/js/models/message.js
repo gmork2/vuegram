@@ -9,7 +9,7 @@ class BaseMessage {
      * @param {Object} data - Object data.
      */
     constructor(data) {
-        if (!'user' in data)
+        if (!('user' in data))
             throw new ReferenceError("Message should has 'user' property!")
 
         this.user = new User(data.user)
@@ -64,7 +64,7 @@ class Message extends BaseMessage{
             if (elapsed < Message.MAX_ELAPSED_TIME)
                 this.date = Math.trunc(elapsed / 60) + ' min ago'
             else
-                this.date = this.date.toISOString().substr(11, 5)
+                this.date = new Date(this.timestamp).toISOString().substr(11, 5)
 
         return elapsed
     }
