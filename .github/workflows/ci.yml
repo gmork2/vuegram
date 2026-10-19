@@ -24,7 +24,10 @@ jobs:
         uses: astral-sh/setup-uv@v4
 
       - name: Sync dependencies
-        run: uv sync --frozen
+        run: uv sync --frozen --group dev
 
       - name: Smoke check
         run: uv run python -m compileall vuegram
+
+      - name: Run tests
+        run: uv run pytest -q

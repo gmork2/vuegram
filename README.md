@@ -55,6 +55,12 @@ CI runs on GitHub Actions (`.github/workflows/ci.yml`) and validates the project
 
 Frontend vendor bundles (`vue.global.js` and `vuex.global.js`) are updated automatically by the scheduled workflow `.github/workflows/update-frontend-vendors.yml` using `scripts/update_frontend_vendors.py`.
 
+Run tests locally:
+```bash
+uv sync --frozen --group dev
+uv run pytest -q
+```
+
 ## License
 This project is licensed under the GNU GENERAL PUBLIC LICENSE
 Version 3 - see the [LICENSE](LICENSE) file for details.
